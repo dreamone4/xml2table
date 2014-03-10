@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>XML2Table v1.1</title>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	    <meta name="description" content="Demo project with jQuery">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<link rel="stylesheet" href="css/main.css">	
+		<script src="js/lib/jquery-1.11.0.min.js"></script>
+		<script src="js/lib/mustache.js"></script>
+		<script src="js/NodeManager.js"></script>
+		<script src="js/functions.js"></script>
+
+	</head>
+
+	<body onload="XML2Table.init();">
+
+			<div id="content">
+			
+			<div class="leftColumn">
+
+				<div class="insertXML">
+
+					<h1>1. Insert your XML</h1>
+					<p>Copy/paste in your XML file. Make sure that you are using valid XML.</p>
+
+					<!-- Initial example XML data -->
+					<textarea id="xmlcode" style="display:block"><?xml version="1.0" encoding="UTF-8"?>
+<catalog>
+	<cd>
+		<title>Empire Burlesque</title>
+		<artist>Bob Dylan</artist>
+		<country>USA</country>
+		<company>Columbia</company>
+		<price>10.90</price>
+		<year>1985</year>
+	</cd>
+	<cd>
+		<title>Hide your heart</title>
+		<artist>Bonnie Tyler</artist>
+		<country>UK</country>
+		<company>CBS Records</company>
+		<price>9.90</price>
+		<year>1988</year>
+	</cd>
+	<cd>
+		<title>Greatest Hits</title>
+		<artist>Dolly Parton</artist>
+		<country>USA</country>
+		<company>RCA</company>
+		<price>9.90</price>
+		<year>1982</year>
+	</cd>
+</catalog>
+					</textarea>
+
+				</div>
+				
+				<div class="pickElements">
+
+					<h1>2. Pick elements</h1>
+					<p>The controls below will automatically update when new XML is inserted.</p>
+					
+					<p>
+						<label for="selectCollectionNode">Select collection node</label>
+						<select name="selectCollectionNode" id="selectCollectionNode">
+							<option value=""></option>
+						</select>
+					</p>
+
+					
+					<div class="column_half">
+						<p><button class="selectAll">Select all</button>
+						<button class="select1-4">Select 1-4</button></p>
+					</div>
+					<div class="column_half">
+						<div id="renderValuesToDisplay"><!-- checkboxes are rendered here --></div>
+					</div>
+					<div style="clear:both">&nbsp;</div>
+					
+
+				</div>
+
+			</div>
+
+			<div class="rightColumn">
+				<div id="dynamicTableDiv">
+					<h1>3. Generated table</h1>
+					<p><!-- table is rendered here --></p>
+				</div>
+			</div>
+
+			<div style="clear:both">&nbsp;</div>
+
+			<div id="footer" style="display:none">&copy; 2014 - Roberto</div>
+
+		</div>
+
+	</body>
+</html>
